@@ -1,1 +1,1 @@
-# js_practice
+JS的练习项目
