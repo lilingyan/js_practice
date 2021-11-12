@@ -15,9 +15,14 @@
         function fn1(){
             var num1 = 11;;
             console.log(num1);
+
+            // 如果函数内部没有声明，直接赋值，也会变成全局变量
+            num2 = 111;;
         }
         fn1();
         console.log(num1);
+
+        console.log(num2);
 
     </script>
 
