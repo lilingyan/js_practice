@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // 预解析，会把所有var 还有 function 提升到当前作用域最前面
+        // 然后按顺序执行代码
+
+        // 变量预解析(变量提升)  函数预解析(函数提升)
+        // 把当前的变量声明提升，但是不提升赋值
+
+        // console.log(num1);  //Uncaught ReferenceError: num1 is not defined
+
+
+        console.log(num2);      //undefined
+        var num2 = 10;
+
+        fn1();                  //正确
+        function fn1(){
+            console.log(11);
+        }
+
+        fn2();                  //1.预解析.html:22 Uncaught TypeError: fn2 is not a function
+        var fn2 = function(){
+            console.log(22);
+        }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
