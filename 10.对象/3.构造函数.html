@@ -12,11 +12,16 @@
             this.name = name;
             this.age = age;
             this.sex = sex;
+
+            this.say = function(sentence){
+                console.log(sentence);
+            }
         }
 
         var obj1 = new Star('我的名字',18,'男');
         console.log(obj1.name);
         console.log(obj1['age']);
+        obj1.say('我是话');
 
     </script>
 
