@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="" id="input1" value="输入内容">
+    <br>
+    <button id="btn1">按钮</button>
+
+    <script>
+
+        var btn1 = document.querySelector('#btn1');
+        var input1 = document.querySelector('#input1');
+
+        btn1.onclick = function(){
+            input1.value = '我被点击了';
+            input1.disabled = true;
+
+            // btn1.disabled = true;
+            // this执行函数调用者
+            this.disabled = true;
+        }
+
+    </script>
+    
+</body>
+</html>
