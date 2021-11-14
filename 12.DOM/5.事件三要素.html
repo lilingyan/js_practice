@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">唐伯虎</button>
+    <script>
+
+        // 事件源 事件类型 事件处理程序    为三要素
+        // 1.事件源 事件被触发的对象
+        var btn = document.getElementById('btn');
+
+        // 2.怎么触发  点击 或者鼠标经过 键盘放下等
+        // 3.事件处理程序  一般是函数
+        btn.onclick = function(){
+            alert('秋香');
+        }
+
+    </script>
+    
+</body>
+</html>
