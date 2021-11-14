@@ -8,7 +8,7 @@
 
     <script>
 
-        var arr1 = [1,2,3];
+        var arr1 = [2,1,3];
         console.log(arr1[1]);
 
         var arr2 = new Array(2);    //空数组长度
@@ -36,6 +36,23 @@
         var s = arr1.shift();
         console.log(s);
         console.log(arr1);
+
+        //翻转
+        arr1.reverse();
+        console.log(arr1);
+
+        //排序
+        arr1.sort();
+        console.log(arr1);
+
+        var arr4 = [1,11,2,23,7,71];
+        arr4.sort();            //类似文字排序，会导致11在2前面
+        console.log(arr4);
+        //自定义排序方法
+        arr4.sort(function(n1,n2){
+            return n1 - n2;
+        });
+        console.log(arr4);
 
     </script>
 
