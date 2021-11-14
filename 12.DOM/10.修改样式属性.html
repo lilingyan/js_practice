@@ -14,12 +14,21 @@
             background-color: pink;
         }
 
+        .change {
+            background-color: purple;
+            color: #fff;
+            font-size: 25;
+        }
+
     </style>
 
 </head>
 <body>
 
     <div></div>
+    <br>
+
+    <div id="div1" class="first">div1</div>
 
     <script>
 
@@ -29,6 +38,11 @@
             //需要驼峰命名法
             this.style.backgroundColor = 'purple';
             this.style.width = '250px';
+        }
+
+        var div1 = document.querySelector('#div1');
+        div1.onclick = function(){
+            div1.className += ' change';
         }
 
     </script>
