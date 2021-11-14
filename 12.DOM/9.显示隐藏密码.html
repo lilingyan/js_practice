@@ -37,11 +37,29 @@
 
     <div class="box">
         <label for="">
-            <img src="imgs/闭眼.jpeg" alt="">
+            <img src="imgs/闭眼.jpeg" alt="" id="eye">
         </label>
-        <input type="password" name="" id="">
+        <input type="password" name="" id="password">
 
     </div>
+
+    <script>
+
+        var password = document.querySelector('#password');
+        var eye = document.querySelector('#eye');
+
+        eye.onclick = function(){
+            if('password' == password.type){
+                password.type = 'text';
+                eye.src = 'imgs/开眼.jpeg';
+            }else if('text' == password.type){
+                password.type = 'password';
+                eye.src = 'imgs/闭眼.jpeg';
+            }
+            
+        }
+
+    </script>
     
 </body>
 </html>
