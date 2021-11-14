@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        li {
+            list-style: none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <ol>
+        <li>ol1</li>
+        <li>ol2</li>
+        <li>ol3</li>
+        <li>ol4</li>
+        <li>ol5</li>
+    </ol>
+
+    <script>
+
+        //不管有几个元素，返回的都是集合
+        var liList = document.getElementsByTagName('li');
+        console.log(liList);
+        console.log(liList[0]);
+
+        for(var i = 0; i < liList.length ; i++){
+            console.log(liList[i]);
+        }
+
+        //指定父元素内部的集合
+        var ol = document.getElementsByTagName('ol')[0];
+        console.log(ol);
+        var olLiList = ol.getElementsByTagName('li');
+        for(var i = 0; i < olLiList.length ; i++){
+            console.log(olLiList[i]);
+        }
+
+    </script>
+    
+</body>
+</html>
