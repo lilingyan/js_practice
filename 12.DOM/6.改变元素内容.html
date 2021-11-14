@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>显示当前系统时间</button>
+    <div>某个时间</div>
+    <p>我是p</p>
+
+    <div id="div1">
+
+    </div>
+
+    <div id="div2">
+
+    </div>
+
+    <script>
+
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+
+        btn.onclick = function(){
+            // 会去除html标签，同时也会去除空格和换行
+            // 非标准
+            div.innerText = '2019-01-01';
+        }
+
+        var p = document.querySelector('p');
+        p.innerText = '2019-02-02';
+        console.log(p.innerText);
+
+        var div1 = document.querySelector('#div1');
+        div1.innerText = '<p>2019-02-02</p>';
+        console.log(div1.innerText);
+
+        // 可以识别html 常用
+        var div2 = document.querySelector('#div2');
+        div2.innerHTML = '<p>   2019-02-02 </p>';
+        console.log(div2.innerText);    //标签和空格会消失
+        console.log(div2.innerHTML);
+
+
+    </script>
+    
+</body>
+</html>
