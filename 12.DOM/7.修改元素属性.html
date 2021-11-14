@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #img1 {
+            height: 200px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <img id="img1" src="imgs/刘德华.jpeg" alt="" title="刘德华">
+
+    <br>
+
+    <button id="btn1">刘德华</button>
+    <button id="btn2">张学友</button>
+
+    <script>
+
+        var btn1 = document.querySelector('#btn1');
+        var btn2 = document.querySelector('#btn2');
+
+        var img1 = document.querySelector('#img1');
+
+        btn1.onclick = function(){
+            img1.src = 'imgs/刘德华.jpeg';
+            img1.title = '刘德华';
+        }
+
+        btn2.onclick = function(){
+            img1.src = 'imgs/张学友.jpeg';
+            img1.title = '张学友';
+        }
+
+        // href 等属性同理
+
+    </script>
+    
+</body>
+</html>
