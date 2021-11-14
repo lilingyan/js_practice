@@ -10,6 +10,10 @@
 
     <div id="demo" index='1' index2='1'></div>
 
+    //h5约定  自定义属性用data开头
+    <div class="dd" data-index='2' data-hh='3' data-list-name="li"></div>
+    <div class="dd" data-index='3'></div>
+
     <script>
 
         var div = document.querySelector('#demo');
@@ -24,6 +28,17 @@
         div.setAttribute('index',2);
 
         div.removeAttribute('index');
+
+        var dd = document.querySelectorAll('.dd');
+        console.log(dd);
+        //h5 直接获取data开头的自定义属性
+        //dataset 里面存着所有data-开头的属性
+        console.log(dd[0].dataset.index);
+        console.log(dd[0].dataset);
+        //如果是多级的，后续用驼峰命名获取
+        console.log(dd[0].dataset.listName);
+        console.log(dd[0].dataset['listName']);
+
 
     </script>
     
