@@ -27,6 +27,13 @@
 
         console.log(str.substr(1,2));   //截取起始位置  截取长度
 
+        str+='你好';
+        str = str.replace('你','您');   //只会替换第一个
+        console.log(str);
+
+        var str1 = '你,好,啊'
+        console.log(str1.split(','));
+
     </script>
 
 </head>
