@@ -12,11 +12,11 @@
     <span>我是span</span>
 
     <ul>
-        <li>我是li</li>
-        <li>我是li</li>
-        <li>我是li</li>
-        <li>我是li</li>
-        <li>我是li</li>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+        <li>我是li5</li>
     </ul>
 
     <ol>
@@ -48,10 +48,29 @@
         console.log(ulChildLiList[0].nodeType);  //nodeType: 3
         console.log(ulChildLiList[1].nodeType);  //nodeType: 1
 
-        //只会获得子元素
+        //只会获得子元素        和上面的做区分，这里没有文本节点
         var ulChildrenLiList = ulList.children;
         console.log(ulChildrenLiList);
 
+        //第一个节点    这里会获取到文本节点(换行)
+        var ulFirstChildLi = ulList.firstChild;
+        console.log(ulFirstChildLi);
+        //last同理
+        var ulLastChildLi = ulList.lastChild;
+        console.log(ulLastChildLi);
+
+        //ie9 以上才支持
+        //获取第一个子元素节点
+        var ulFirstElementChildLi = ulList.firstElementChild;
+        console.log(ulFirstElementChildLi);
+        //last同理
+        var ulLastElementChildLi = ulList.lastElementChild;
+        console.log(ulLastElementChildLi);
+
+
+        // 实际开发的写法
+        console.log(ulList.children[0]);
+        console.log(ulList.children[ulList.children.length-1]);
 
     </script>
     
