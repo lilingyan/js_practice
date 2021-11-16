@@ -19,6 +19,14 @@
         <li>我是li</li>
     </ul>
 
+    <ol>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ol>
+
     <div class="demo">
         <div class="box">
             <div class="erweima"></div>
@@ -32,6 +40,18 @@
         //获取父节点        获取是离他最近的父亲
         var box = erweima.parentNode;
         console.log(box);
+
+        var ulList = document.querySelector('ul');
+        //获取子节点        包含元素和文本所有节点  一共11个，6个是换行
+        var ulChildLiList = ulList.childNodes;  //里面的文本节点，是换行
+        console.log(ulChildLiList);
+        console.log(ulChildLiList[0].nodeType);  //nodeType: 3
+        console.log(ulChildLiList[1].nodeType);  //nodeType: 1
+
+        //只会获得子元素
+        var ulChildrenLiList = ulList.children;
+        console.log(ulChildrenLiList);
+
 
     </script>
     
