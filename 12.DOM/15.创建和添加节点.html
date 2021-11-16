@@ -19,12 +19,14 @@
         var ul = document.querySelector('ul');
 
         var li = document.createElement('li');
+        li.innerHTML = '333';
 
         //追加孩子元素      位置为子元素最后
         ul.appendChild(li);
 
         //在最前面添加元素
         var li2 = document.createElement('li');
+        li2.innerHTML = '111';
         ul.insertBefore(li2,ul.children[0]);
 
     </script>
