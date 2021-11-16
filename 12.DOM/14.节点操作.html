@@ -41,6 +41,13 @@
         var box = erweima.parentNode;
         console.log(box);
 
+
+        // nodeType 有三个类型
+        // 1.元素
+        // 2.属性
+        // 3.文本
+
+
         var ulList = document.querySelector('ul');
         //获取子节点        包含元素和文本所有节点  一共11个，6个是换行
         var ulChildLiList = ulList.childNodes;  //里面的文本节点，是换行
@@ -71,6 +78,17 @@
         // 实际开发的写法
         console.log(ulList.children[0]);
         console.log(ulList.children[ulList.children.length-1]);
+
+
+        //兄弟节点      包含元素和文本节点
+        var div = document.querySelector('div');
+        console.log(div.nextSibling);   //是换行
+        console.log(div.previousSibling);   //也是换行
+
+        // 下一个兄弟元素节点   ie9
+        console.log(div.nextElementSibling);  
+        console.log(div.previousElementSibling);    //没有就是null
+
 
     </script>
     
