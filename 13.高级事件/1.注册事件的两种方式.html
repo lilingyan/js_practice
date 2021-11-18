@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="btn1">传统注册事件</button>
+    <button class="btn2">方法监听注册事件</button>
+
+    <script>
+
+        var btn1 = document.querySelector('.btn1');
+        var btn2 = document.querySelector('.btn2');
+
+        // 传统方式注册事件
+        btn1.onclick = function(){
+            alert('hi');
+        }
+        btn1.onclick = function(){
+            alert('hi2');
+        }
+
+        // 事件监听注册事件
+        // 可以同时添加多个函数
+        btn2.addEventListener(
+            'click',                    //不要on
+            function(){
+                alert('22');
+            }
+        );
+
+        btn2.addEventListener(
+            'click',                  
+            function(){
+                alert('33');
+            }
+        );
+
+    </script>
+    
+</body>
+</html>
