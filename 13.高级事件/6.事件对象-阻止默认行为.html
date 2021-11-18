@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>123</div>
+    <a href="http://www.baidu.com">百度</a>
+    <form action="http://www.baidu.com">
+        <input type="submit" value="提交" name="sub">
+    </form>
+
+    <script>
+
+        var div = document.querySelector('div');
+        var a = document.querySelector('a');
+
+        div.addEventListener(
+            'click',
+            fn1
+        );
+        div.addEventListener(
+            'mouseover',
+            fn1
+        );
+        div.addEventListener(
+            'mouseout',
+            fn1
+        );
+        function fn1(evnet){
+            console.log(event.type);        //click
+        }
+
+        // 让链接不跳转，或者不提交
+        a.addEventListener(
+            'click',
+            function(event){
+                event.preventDefault();     //标准写法
+            }
+        );
+
+        a.onclick = function(event){
+            event.preventDefault();     //普通浏览器
+            event.returnValue;          //属性 ie9之前
+            return false;               //这个谁都能用  并且不能用于addEventListener
+        }
+
+    </script>
+    
+</body>
+</html>
