@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>点击</button>
+    <p>abc</p>
+
+    <script>
+
+        var btn = document.querySelector('button');
+        btn.onclick = function(){
+
+            //如果页面已经全部渲染完，write会重绘页面
+            document.write('<div>123</div>');
+        }
+
+        //与上同理，重绘会导致页面原来数据消失
+        window.onload = function(){
+            document.write('<div>123</div>');
+        }
+
+    </script>
+    
+</body>
+</html>
