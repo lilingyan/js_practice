@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li>我是弹框1</li>
+        <li>我是弹框2</li>
+        <li>我是弹框3</li>
+        <li>我是弹框4</li>
+        <li>我是弹框5</li>
+    </ul>
+
+    <script>
+
+        var ul =  document.querySelector('ul');
+
+        //点了子元素，因为冒泡的原理，会被父元素接收到
+        //并且父元素的target可以获取到点击的子元素
+        ul.addEventListener(
+            'click',
+            function(event){
+                // alert('我是弹框');
+                var li = event.target;
+                li.style.backgroundColor = 'pink';
+            }
+        );
+
+    </script>
+    
+</body>
+</html>
