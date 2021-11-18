@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .father {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background-color: purple;
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: pink;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- 一般开发中都使用冒泡 -->
+    <!-- 有些事件没有冒泡  比如 焦点 ， 鼠标进入出去等 -->
+
+    <div class="father">
+        <div class="son">son</div>
+    </div>
+
+    <script>
+
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+
+        // 第三个参数是true，则是捕获阶段，否则是冒泡阶段
+        son.addEventListener(
+            'click',
+            function(){
+                alert('son1');
+            },
+            true
+        );
+
+        //都是捕获阶段流，点了son，也会先触发father
+        father.addEventListener(
+            'click',
+            function(){
+                alert('father1');
+            },
+            true
+        );
+
+        son.addEventListener(
+            'click',
+            function(event){
+                alert('son2');
+                //阻止冒泡，不会再调用到father2
+                event.stopPropagation();
+                //ie9之前的写法  是个属性
+                event.cancelBubble = true
+            },
+            false
+        );
+
+        //都是冒泡阶段流，点了son，会先触发son
+        father.addEventListener(
+            'click',
+            function(){
+                alert('father2');
+            },
+            false
+        );
+
+    </script>
+    
+</body>
+</html>
