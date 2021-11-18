@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>123</div>
+
+    <script>
+
+        var div = document.querySelector('div');
+        // event 就是事件对象
+        // 和事件相关的数据
+        div.onclick = function(event){
+            console.log(event);
+
+            //ie9 之前的获取方法
+            console.log(window.event);
+        }
+
+        div.addEventListener(
+            'click',
+            function(event){
+                console.log(event);
+            }
+        );
+
+    </script>
+    
+</body>
+</html>
