@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            height: 3000px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <script>
+
+        document.addEventListener(
+            'click',
+            function(event){
+                console.log(event);
+                
+                //相对可视区的位置
+                console.log(event.clientX);
+                console.log(event.clientY);
+
+                //相对整个页面文档的坐标    ie9+
+                console.log(event.pageX);
+                console.log(event.pageY);
+
+                //相对电脑屏幕的坐标   比较少用
+                console.log(event.screenX);
+                console.log(event.screenY);
+            }
+        )
+
+    </script>
+    
+</body>
+</html>
