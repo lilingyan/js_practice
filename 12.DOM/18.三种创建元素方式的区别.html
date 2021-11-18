@@ -11,6 +11,9 @@
     <button>点击</button>
     <p>abc</p>
 
+    <div class="inner"></div>
+    <div class="create"></div>
+
     <script>
 
         var btn = document.querySelector('button');
@@ -21,8 +24,31 @@
         }
 
         //与上同理，重绘会导致页面原来数据消失
-        window.onload = function(){
+        /* window.onload = function(){
             document.write('<div>123</div>');
+        } */
+
+        var inner = document.querySelector(".inner");
+        // inner.innerHTML = '<a href="#">百度</a>';
+        for(var i = 0; i < 100 ; i++){
+            //拼接字符串，每次都要去获取内存，速度很慢
+            inner.innerHTML += '<a href="#">百度</a> ';
+        }
+
+        //比下面 createElement 效率还要高
+        var arr = [];
+        for(var i = 0; i < 100 ; i++){
+            arr.push('<a href="#">百度</a> ');
+        }
+        inner.innerHTML += arr.join('');
+
+        var create = document.querySelector(".create");
+        // var a = document.createElement('a');
+        // create.appendChild(a);
+        for(var i = 0; i < 100 ; i++){
+            // 这个快，大概比上面快100倍的速度
+            var a = document.createElement('a');
+            create.appendChild(a);
         }
 
     </script>
