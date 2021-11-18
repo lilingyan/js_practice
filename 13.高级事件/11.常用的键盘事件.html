@@ -31,6 +31,9 @@
         // 弹起时触发
         document.onkeyup = function(event){
             console.log('我弹起了');
+
+            //up和down不区分字母大小写  ，  press区分
+            console.log('keyCode: '+event.keyCode); //会获取相应键的ASCII值
         }
 
     </script>
