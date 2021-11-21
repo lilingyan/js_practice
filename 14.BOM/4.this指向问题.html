@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>btn1</button>
+
+    <script>
+
+        var btn1 = document.querySelector('button');
+
+        //全局的指向window
+        console.log('全局log'+this);
+        //全局下的函数，指向的也是window
+        function fn1(){
+            console.log('全局函数'+this);
+        }
+        fn1();  //window.fn1    他也是window的一个函数，所以会指向调用他的window
+        //也是指向window，因为还是window调用的函数
+        setTimeout(
+            function(){
+                console.log('setTimeout函数'+this);
+            },
+            '1000'
+        )
+
+        var fn2 = {
+            sayHi : function(){
+                console.log('对象中的方法'+this);   //指向的fn2
+            }
+        }
+        fn2.sayHi();
+
+        btn1.addEventListener(
+            'click',
+            function(){
+                console.log('btn1' + this); //指向的btn1
+            }
+        )
+
+        function Fun1(){
+            console.log('构造函数'+this);   
+        }
+        var fun1 = new Fun1();  //指向fun1
+        
+    </script>
+    
+</body>
+</html>
