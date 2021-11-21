@@ -8,20 +8,54 @@
 </head>
 <body>
 
-    <button class="btn1">点击</button>
+    <button class="btn1">点击href</button>
+    <button class="btn2">点击assign</button>
+    <button class="btn3">点击replace</button>
+    <button class="btn4">点击reload</button>
 
     <script>
+        var btn1 = document.querySelector('.btn1');
+        var btn2 = document.querySelector('.btn2');
+        var btn3 = document.querySelector('.btn3');
+        var btn4 = document.querySelector('.btn4');
+        
         console.log(location.href);
         console.log(location.hostname);
         console.log(location.search);
         console.log(location.protocol);
 
-        var btn1 = document.querySelector('.btn1');
         btn1.addEventListener(
             'click',
             function(){
                 console.log(window.location.href);
                 location.href = 'http://www.baidu.com';
+            }
+        )
+
+        //assign 有历史  不可以后退
+        btn2.addEventListener(
+            'click',
+            function(){
+                console.log(window.location.assign);
+                location.assign('http://www.baidu.com');
+            }
+        )
+
+        //replace 没有历史  可以后退
+        btn3.addEventListener(
+            'click',
+            function(){
+                console.log(window.location.replace);
+                location.replace('http://www.baidu.com');
+            }
+        )
+
+        btn4.addEventListener(
+            'click',
+            function(){
+                console.log(window.location.reload);
+                //参数是true 是强制刷新的意思
+                location.reload();
             }
         )
 
