@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="#">进度第二个页面</a>
+
+    <br>
+
+    <button class="pre">后退</button>
+    <button class="next">前进</button>
+
+    <button class="nextN">前进3步</button>
+
+    <script>
+
+        // 前进后退
+
+        var btn_pre = document.querySelector('.pre');
+        var btn_next = document.querySelector('.next');
+        var btn_nextN = document.querySelector('.nextN');
+
+        btn_pre.addEventListener(
+            'click',
+            function(){
+                console.log('前一个页面');
+                history.back();
+            }
+        );
+
+        btn_next.addEventListener(
+            'click',
+            function(){
+                console.log('后一个页面');
+                history.forward();
+            }
+        );
+
+        btn_nextN.addEventListener(
+            'click',
+            function(){
+                console.log('后第3个页面');
+                //负数则是前多少个页面
+                history.go(3);
+            }
+        );
+
+    </script>
+    
+</body>
+</html>
