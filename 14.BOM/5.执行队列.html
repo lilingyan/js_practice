@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // 同步任务队列会先被执行
+        // 异步任务会放入异步队列，只有等同步任务队列中的事件都执行完成才会被执行
+        // 所以这里一定是2先输出，最后才会去异步队列中找到任务输出3
+
+        console.log(1);
+
+        setTimeout(
+            function(){
+                console.log(3);
+            },
+            0
+        )
+
+        console.log(2);
+
+    </script>
+    
+</body>
+</html>
