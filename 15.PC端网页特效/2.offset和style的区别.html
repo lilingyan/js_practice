@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="box"></div>
+
+    <script>
+
+        // 一般获取用offset  更改用style
+
+        var box = document.querySelector('.box');
+
+        console.log(box.offsetWidth);
+        // style只能获取行内样式的值 
+        //style获取有单位，offset获取没单位
+        // offset包含padding等撑大后的结果，style不包含
+        // offset是只读的，无法更改
+        console.log(box.style.width);   //空
+
+    </script>
+    
+</body>
+</html>
