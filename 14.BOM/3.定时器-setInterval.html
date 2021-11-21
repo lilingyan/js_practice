@@ -8,14 +8,42 @@
 </head>
 <body>
 
+    <button class="begin">开启interval2</button>
+    <button class="stop">关闭interval2</button>
+
     <script>
 
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+
         //函数   每隔多少ms
-        setInterval(
+        var interval1 = setInterval(
             function(){
-                console.log('我是interval输出');
+                console.log('我是interval1输出');
             },
             1000
+        )
+
+        var interval2 = null;
+        begin.addEventListener(
+            'click',
+            function(){
+                interval2 = setInterval(
+                function(){
+                    console.log('开启了interval2');
+                    console.log('interval2');
+                },
+                1000
+            )
+            }
+        )
+
+        stop.addEventListener(
+            'click',
+            function(){
+                console.log('关闭了interval2');
+                window.clearInterval(interval2);
+            }
         )
 
     </script>
