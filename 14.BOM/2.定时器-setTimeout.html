@@ -8,7 +8,11 @@
 </head>
 <body>
 
+    <button>关闭timer2</button>
+
     <script>
+
+        var btn1 = document.querySelector('button');
 
         //动作 延迟(ms 默认0)
         var timer1 = setTimeout(() => {
@@ -19,7 +23,15 @@
             console.log('我是fn1');
         }
 
-        var timer2 = setTimeout(fn1, 2000);
+        var timer2 = setTimeout(fn1, 4000);
+
+        btn1.addEventListener(
+            'click',
+            function(){
+                console.log('关闭timer2');
+                window.clearTimeout(timer2);
+            }
+        )
 
     </script>
     
