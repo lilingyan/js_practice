@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .father {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+
+        .father2 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .son2 {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="father">
+
+        <div class="son"></div>
+
+    </div>
+
+    <br>
+
+    <div class="father2">
+
+        <div class="son2"></div>
+
+    </div>
+
+    <script>
+
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+
+        // 只会在进过自己才会触发
+        father.addEventListener(
+            'mouseenter',
+            function(){
+                console.log(11);
+            }
+        )
+
+        var father2 = document.querySelector('.father2');
+        var son2 = document.querySelector('.son2');
+
+        //经过子盒子也触发
+        // 原理是子盒子冒泡，调用到了父盒子
+        father2.addEventListener(
+            'mouseover',
+            function(){
+                console.log(11);
+            }
+        )
+
+
+    </script>
+    
+</body>
+</html>
